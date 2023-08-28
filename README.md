@@ -21,17 +21,22 @@ WSL-Ubuntu-Docker Desktop, Kubernetes, Helm<br/>
 
 Пример:<br/>
 \# Added by Docker Desktop<br/>
-10.10.5.43 host.docker.internal<br/>
-10.10.5.43 gateway.docker.internal<br/>
+192.168.1.102 host.docker.internal<br/>
+192.168.1.102 gateway.docker.internal<br/>
 \# To allow the same kube context to work on the host and the container:<br/>
 127.0.0.1 kubernetes.docker.internal<br/>
 \# End of section<br/>
 
-При двухсторонней связке, проект можем тестировать как на Linux, так и на Windows в единой среде, через настроенный Visual Studio Code (для этого нужнго будет установить плагины extension pack Remote Development, Docker, Kubernetes).
+IP в hosts нужны для подключения к микросервису из localhost, если потребуется запуск не в проде.<br/>
 
-- Git Clone себе на компьютер этот проект.<br/>
-- Переходим в директорию.<br/>
-- Устанавливаем/запускаем терминал Windows и выполняем дальнейшие действия.<br/>
+При двухсторонней связке, проект можем тестировать как на Linux, так и на Windows в единой среде, через настроенный Visual Studio Code (для этого нужнго будет установить плагины "extension pack Remote Development", "Docker", "Kubernetes").<br/>
+
+- Git Clone себе на компьютер этот проект;<br/>
+- Перебрасываем проект в WSL-Ubuntu (\\wsl.localhost\Ubuntu\home\<имя компьютера>), фактически мы перебросили проект на продакшен (аналогично можно было бы перебросить в Azure, AWS, GCC и т.п. через настроенный ssh терминал+токен);<br/>
+- Устанавливаем/запускаем проект в VSCode (предварительно подключаемся к WSL-Ubuntu, через плагин WSL, то есть в VSCode нажимаем комбинацию Ctrl+Shift+P пишем WSL: Connect to WSL using Distro in New Window... и подключаемся к Ubuntu);<br/>
+- Смотрим в терминале текущий путь, прописав "pwd";<br/>
+- Переходим в директорию (cd /home/<имя компьютера>/app);<br/>
+- Смотрим наличие файлов проекта, пишем в терминале "ls" и в VSCode выбираем путь к проекту (лучше использовать плагин Remote Explorer или установить весь пакет "extension pack Remote Development"). Выполняем дальнейшие действия.<br/>
 
 Установка:<br/>
 
@@ -71,10 +76,19 @@ WSL-Ubuntu-Docker Desktop, Kubernetes, Helm<br/>
 
 - kubectl describe services kubernetes<br/>
 
+Получаем IP-адрес основной системы, выполнив следующую команду из дистрибутива Linux:<br/>
+
+- Вводим: cat /etc/resolv.conf<br/>
+- Скопировать IP-адрес в строке, начинающейся с nameserver<br/>
+- Подключаемся к серверу WSL-Ubuntu, используя скопированный IP-адрес + порт из проекта, в данном случае "30080"<br/>
+
+Пример:<br/>
+http://172.18.160.1:30080<br/>
+
 Можем завершить обзор и очистить релиз:<br/>
 
-- kubectl delete services service-app-helm
-- kubectl delete deployment deployment-app-helm-app
+- kubectl delete services service-app-helm<br/>
+- kubectl delete deployment deployment-app-helm-app<br/>
 
 Можем завершить обзор и удалить релиз:<br/>
 

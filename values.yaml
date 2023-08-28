@@ -6,6 +6,8 @@ image:
   pullPolicy: Always # IfNotPresent
 
 service:
-  type: LoadBalancer # LoadBalancer / ClusterIP / NodePort
+  type: LoadBalancer # LoadBalancer / ClusterIP / NodePort / ExternalName
   port: 80
-  nodePort: 30080
+  exposePort: 30080 # by siddhu expose to node
+  internalPort: 80 # by siddhu Internal exposed within the pod
+  targetPort: 80 # by siddhu App server listening on this port
