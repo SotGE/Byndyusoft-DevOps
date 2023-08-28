@@ -17,6 +17,16 @@
 Устанавливаем на Windows 10/11:<br/>
 WSL-Ubuntu-Docker Desktop, Kubernetes, Helm<br/>
 
+Проверяем, чтобы в C:\Windows\System32\drivers\etc\hosts записалась информация при установке ПО.<br/>
+
+Пример:<br/>
+\# Added by Docker Desktop<br/>
+10.10.5.43 host.docker.internal<br/>
+10.10.5.43 gateway.docker.internal<br/>
+\# To allow the same kube context to work on the host and the container:<br/>
+127.0.0.1 kubernetes.docker.internal<br/>
+\# End of section<br/>
+
 При двухсторонней связке, проект можем тестировать как на Linux, так и на Windows в единой среде, через настроенный Visual Studio Code (для этого нужнго будет установить плагины extension pack Remote Development, Docker, Kubernetes).
 
 - Git Clone себе на компьютер этот проект.<br/>
