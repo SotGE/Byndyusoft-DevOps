@@ -15,7 +15,7 @@
 ## Documentation
 
 Устанавливаем на Windows 10/11:<br/>
-WSL, Ubuntu, Docker, Kubernetes, Helm<br/>
+WSL-Ubuntu-Docker Desktop, Kubernetes, Helm<br/>
 
 При двухсторонней связке, проект можем тестировать как на Linux, так и на Windows в единой среде, через настроенный Visual Studio Code (для этого нужнго будет установить плагины extension pack Remote Development, Docker, Kubernetes).
 
@@ -59,7 +59,10 @@ helm uninstall app
 
 ## System requirements
 
-WSL, Ubuntu, Docker, Kubernetes, Helm
+- Windows 10/11 (можно сразу на Linux/Mac все настроить);<br/>
+- WSL-Ubuntu-Docker Desktop;<br/>
+- Kubernetes;<br/>
+- Helm (можно через choco установить).
 
 <br/>
 
