@@ -17,6 +17,8 @@
 Устанавливаем на Windows 10/11:<br/>
 WSL, Ubuntu, Docker, Kubernetes, Helm<br/>
 
+При двухсторонней связке, проект можем тестировать как на Linux, так и на Windows в единой среде, через настроенный Visual Studio Code (для этого нужнго будет установить плагины extension pack Remote Development, Docker, Kubernetes).
+
 Push себе на компьютер проект.<br/>
 Переходим в директорию.<br/>
 Устанавливаем/запускаем терминал Windows и выполняем дальнейшие действия.<br/>
