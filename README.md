@@ -61,6 +61,11 @@ WSL-Ubuntu-Docker Desktop, Kubernetes, Helm<br/>
 
 - kubectl describe services kubernetes<br/>
 
+Можем завершить обзор и очистить релиз:<br/>
+
+- kubectl delete services service-app-helm
+- kubectl delete deployment deployment-app-helm-app
+
 Можем завершить обзор и удалить релиз:<br/>
 
 - helm delete app<br/>
