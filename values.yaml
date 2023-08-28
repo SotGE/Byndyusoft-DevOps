@@ -1,0 +1,11 @@
+scaling:
+  replicaCount: 4
+
+image:
+  repository: nginxdemos/hello:latest
+  pullPolicy: Always # IfNotPresent
+
+service:
+  type: LoadBalancer # LoadBalancer / ClusterIP / NodePort
+  port: 80
+  nodePort: 30080

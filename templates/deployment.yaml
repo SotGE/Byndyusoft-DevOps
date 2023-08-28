@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-{{ .Chart.Name }}-helm-{{ .Release.Name }}
+  labels:
+    app: deployment-{{ .Chart.Name }}-helm-{{ .Release.Name }}
+spec:
+  replicas: {{ .Values.scaling.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}-helm-{{ .Release.Name }}
+  template:
+    metadata:
+      annotations:
+        com.{{ .Chart.Name }}.role: helm
+      labels:
+        app: {{ .Chart.Name }}-helm-{{ .Release.Name }}
+    spec:
+      restartPolicy: Always
+      containers:
+        - name: web-{{ .Chart.Name }}-helm-{{ .Release.Name }}
+          image: {{ .Values.image.repository }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            limits:
+              cpu: 500m
+              memory: 256Mi
+            requests:
+              cpu: 500m
+              memory: 256Mi

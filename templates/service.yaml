@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-{{ .Chart.Name }}-helm
+  labels:
+    env: prod
+    owner: Maksim.E.Sorokin
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.port }}
+      nodePort: {{ .Values.service.nodePort }}
+      protocol: TCP
+      name: service-{{ .Chart.Name }}-http
+  selector:
+    app: service-{{ .Chart.Name }}-helm
