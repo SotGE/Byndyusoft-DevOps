@@ -5,15 +5,16 @@ metadata:
   labels:
     env: prod
     owner: Maksim.E.Sorokin
-    app: service-{{ .Chart.Name }}-helm
-    app.kubernetes.io/instance: service-{{ .Chart.Name }}-helm
+    helm.sh/chart: deployment-{{ .Chart.Name }}-helm-{{ .Release.Name }}-labels
+    app.kubernetes.io/version: {{ .Chart.AppVersion }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
   type: {{ .Values.service.type }}
   ports:
     - nodePort: {{ .Values.service.exposePort }}
       port: {{ .Values.service.internalPort }}
-      targetPort: {{ .Values.service.targetPort }}
+      targetPort: http
       protocol: TCP
-      name: service-{{ .Chart.Name }}-http
+      name: http
   selector:
-    run: service-{{ .Chart.Name }}-helm
+    app: {{ .Chart.Name }}-helm-{{ .Release.Name }}-match-labels

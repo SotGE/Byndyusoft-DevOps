@@ -1,4 +1,6 @@
 [home-url]: https://github.com/SotGE/Byndyusoft-DevOps 'Home'
+[img1]: ./.gitimg/1.jpg 'Скриншот 1'
+[img2]: ./.gitimg/2.jpg 'Скриншот 2'
 
 ---
 
@@ -84,6 +86,12 @@ IP в hosts нужны для подключения к микросервису
 
 Пример:<br/>
 http://172.18.160.1:30080<br/>
+
+##### <p align="center">![img1]</p>
+
+## Результат запущенного приложения в продакшене:
+
+##### <p align="center">![img2]</p>
 
 Можем завершить обзор и очистить релиз:<br/>
 

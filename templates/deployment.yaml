@@ -3,20 +3,21 @@ kind: Deployment
 metadata:
   name: deployment-{{ .Chart.Name }}-helm-{{ .Release.Name }}
   labels:
-    app: deployment-{{ .Chart.Name }}-helm-{{ .Release.Name }}
+    helm.sh/chart: deployment-{{ .Chart.Name }}-helm-{{ .Release.Name }}-labels
+    app.kubernetes.io/version: {{ .Chart.AppVersion }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.scaling.replicaCount }}
   selector:
     matchLabels:
-      app: {{ .Chart.Name }}-helm-{{ .Release.Name }}
+      app: {{ .Chart.Name }}-helm-{{ .Release.Name }}-match-labels
   template:
     metadata:
-      annotations:
-        com.{{ .Chart.Name }}.role: helm
       labels:
-        app: {{ .Chart.Name }}-helm-{{ .Release.Name }}
+        app: {{ .Chart.Name }}-helm-{{ .Release.Name }}-match-labels
     spec:
       restartPolicy: Always
+      serviceAccountName: {{ .Chart.Name }}-helm-{{ .Release.Name }}-account-name
       containers:
         - name: web-{{ .Chart.Name }}-helm-{{ .Release.Name }}
           image: {{ .Values.image.repository }}
@@ -25,14 +26,14 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
-          # livenessProbe:
-          #   httpGet:
-          #     path: /
-          #     port: http
-          # readinessProbe:
-          #   httpGet:
-          #     path: /
-          #     port: http
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
           resources:
             limits:
               cpu: 500m

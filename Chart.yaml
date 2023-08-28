@@ -1,16 +1,16 @@
 apiVersion: v2
 name: app
-description: Demo Helm chart for Kubernetes
+description: Demo Helm chart for Kubernetes (Byndyusoft)
 type: application
 version: 0.1.0
 appVersion: '1.0.0'
 keywords:
-  - 'Byndyusoft'
-  - 'app'
-  - 'nginx'
-  - 'demo'
-  - 'devops'
+- 'Byndyusoft'
+- 'app'
+- 'nginx'
+- 'demo'
+- 'devops'
 maintainers:
-  - name: Maksim E. Sorokin
-    email: sotge@hotmail.com
-    url: https://github.com/SotGE
+- name: Maksim E. Sorokin
+  email: sotge@hotmail.com
+  url: https://github.com/SotGE
