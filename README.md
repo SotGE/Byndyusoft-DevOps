@@ -1,16 +1,21 @@
 [home-url]: https://github.com/SotGE/Byndyusoft-DevOps 'Home'
 [img1]: ./.gitimg/1.jpg 'Скриншот 1'
 [img2]: ./.gitimg/2.jpg 'Скриншот 2'
+[checklist]: ./CHECKLIST.md 'CHECKLIST'
 
 ---
 
 # <p align="center">[Byndyusoft DevOps][home-url]</p>
 
+### **<p align="center">[Посмотреть чек-лист >>][checklist]</p>**
+
 <br/>
 
 ## Description
 
-Для Byndyusoft на должность DevOps
+### Для Byndyusoft на должность DevOps
+
+Перед запуском проекта на проду, проверим 👉 [чек-лист][checklist]
 
 <br/>
 
