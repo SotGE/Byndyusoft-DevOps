@@ -23,16 +23,14 @@ WSL-Ubuntu-Docker Desktop, Kubernetes, Helm<br/>
 - Переходим в директорию.<br/>
 - Устанавливаем/запускаем терминал Windows и выполняем дальнейшие действия.<br/>
 
-Установка с пробным запуском и отладкой:<br/>
+Установка:<br/>
 
-- helm install . --name app --dry-run --debug<br/>
-
-Смотрим статус релиза:<br/>
-
-- helm ls --all app<br/>
+- helm install app .<br/>
 
 Смотрим список релизов с пространством имен:<br/>
 
+- helm ls --all<br/>
+  или
 - helm list<br/>
 
 Смотрим список деплойментов:<br/>
@@ -51,13 +49,17 @@ WSL-Ubuntu-Docker Desktop, Kubernetes, Helm<br/>
 
 - kubectl get all --all-namespaces=true<br/>
 
-Проверим состояние ноды кластера этого приложения:<br/>
+Смотрим информацию о кластере:<br/>
 
-- kubectl describe node app<br/>
+- kubectl cluster-info<br/>
 
-Проверим состояние ноды кластера Kubernetes:<br/>
+Смотрим описание сервиса этого приложения:<br/>
 
-- kubectl describe node kubernetes<br/>
+- kubectl describe services service-app-helm<br/>
+
+Смотрим описание сервиса Kubernetes:<br/>
+
+- kubectl describe services kubernetes<br/>
 
 Можем завершить обзор и удалить релиз:<br/>
 
