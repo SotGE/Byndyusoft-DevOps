@@ -1,4 +1,4 @@
-[home-url]: https://github.com/SotGE/Web-Run-Python 'Home'
+[home-url]: https://github.com/SotGE/Byndyusoft-DevOps 'Home'
 
 ---
 
@@ -78,7 +78,7 @@ WSL-Ubuntu-Docker Desktop, Kubernetes, Helm<br/>
 
 ## Contacts
 
-Site: <https://sotge.ru/>
+Maksim E. Sorokin
 
 E-Mail: <sotge@hotmail.com>
 
