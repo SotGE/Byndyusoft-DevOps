@@ -14,43 +14,43 @@
 
 ## Documentation
 
-Устанавливаем на Windows 10/11:
-WSL, Ubuntu, Docker, Kubernetes, Helm
+Устанавливаем на Windows 10/11:<br/>
+WSL, Ubuntu, Docker, Kubernetes, Helm<br/>
 
-Push себе на компьютер проект.
-Переходим в директорию.
-Устанавливаем/запускаем терминал Windows и выполняем дальнейшие действия.
+Push себе на компьютер проект.<br/>
+Переходим в директорию.<br/>
+Устанавливаем/запускаем терминал Windows и выполняем дальнейшие действия.<br/>
 
-Установка с пробным запуском и отладкой:
-helm install . --name app --dry-run --debug
+Установка с пробным запуском и отладкой:<br/>
+helm install . --name app --dry-run --debug<br/>
 
-Смотрим статус релиза:
-helm ls --all app
+Смотрим статус релиза:<br/>
+helm ls --all app<br/>
 
-Смотрим список релизов с пространством имен:
-helm list
+Смотрим список релизов с пространством имен:<br/>
+helm list<br/>
 
-Смотрим список деплойментов:
-kubectl get deploy
+Смотрим список деплойментов:<br/>
+kubectl get deploy<br/>
 
-Смотрим список подов:
-kubectl get pods -o wide
+Смотрим список подов:<br/>
+kubectl get pods -o wide<br/>
 
-Смотрим список сервисов:
-kubectl get svc
+Смотрим список сервисов:<br/>
+kubectl get svc<br/>
 
-Смотрим список обо всех сущностях во всех пространствах имен:
-kubectl get all --all-namespaces=true
+Смотрим список обо всех сущностях во всех пространствах имен:<br/>
+kubectl get all --all-namespaces=true<br/>
 
-Проверим состояние ноды кластера этого приложения:
-kubectl describe node app
+Проверим состояние ноды кластера этого приложения:<br/>
+kubectl describe node app<br/>
 
-Проверим состояние ноды кластера Kubernetes:
-kubectl describe node kubernetes
+Проверим состояние ноды кластера Kubernetes:<br/>
+kubectl describe node kubernetes<br/>
 
-Можем завершить обзор и удалить релиз:
-helm delete app
-или
+Можем завершить обзор и удалить релиз:<br/>
+helm delete app<br/>
+или<br/>
 helm uninstall app
 
 <br/>
