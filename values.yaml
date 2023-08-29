@@ -8,6 +8,6 @@ image:
 service:
   type: LoadBalancer # LoadBalancer / ClusterIP / NodePort / ExternalName
   port: 80
-  exposePort: 30080 # by siddhu expose to node
-  internalPort: 80 # by siddhu Internal exposed within the pod
-  targetPort: 80 # by siddhu App server listening on this port
+  exposePort: 30080 # expose to node
+  internalPort: 80 # Internal exposed within the pod
+  targetPort: 80 # App server listening on this port
