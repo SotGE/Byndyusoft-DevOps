@@ -36,6 +36,8 @@ WSL-Ubuntu-Docker Desktop, Kubernetes, Helm<br/>
 
 IP в hosts нужны для подключения к микросервису из localhost, если потребуется запуск не в проде.<br/>
 
+Для тестирования можно зайти на Web-адрес: http://kubernetes.docker.internal/<br/>
+
 При двухсторонней связке, проект можем тестировать как на Linux, так и на Windows в единой среде, через настроенный Visual Studio Code (для этого нужнго будет установить плагины "extension pack Remote Development", "Docker", "Kubernetes").<br/>
 
 - Git Clone себе на компьютер этот проект;<br/>
